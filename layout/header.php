@@ -23,16 +23,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">FAQ</a>
                 </li>
-               <!-- <li class="nav-item dropdown">
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Programme</a>
-                    <a class="dropdown-item" href="#">Artistes</a>
-                    <a class="dropdown-item" href="#">Carte</a>
-                    <a class="dropdown-item" href="#">Billeterie</a>
-                    <a class="dropdown-item" href="#">Maps</a>
-                    <a class="dropdown-item" href="#">FAQ</a>
-                    </div>
-                </li> -->
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
                 </li>
