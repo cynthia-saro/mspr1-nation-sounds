@@ -6,15 +6,15 @@
 <body>
 
     <div id="content">
-    <?php include("layout/header.php");?>
+     <?php include("layout/header.php");?>
         <div id="festival">
-            <ul  v-if="festivalprogram.length > 0">
-                <a href="">
-                    <li v-for="artist in festivalprogram">
-                        <img v-bind:src="artist.acf.photo.url"/>
-                        <div class="name">{{artist.acf.scene}}</div>  
-                    </li>
-                </a>
+            <ul v-if="festivalprogram.length > 0">
+                <li v-for="artist in festivalprogram" class="homeArtists">
+                    <a v-bind:href="artist.link" >
+                        <img v-bind:src="artist.acf.photo.url" class="pictureArtists"/>
+                        <div class="nameArtists">{{artist.acf.nom}}</div>  
+                    </a>    
+                </li>
             </ul>
         </div>
         <?php include('script/api.php') ?>
