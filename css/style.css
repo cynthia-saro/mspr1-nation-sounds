@@ -1,0 +1,40 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+body
+{
+  background:#fff;
+  font-family:'Lato';
+  margin:0;
+  padding:0;
+}
+
+#content {
+	text-align: center;
+}
+#festival{
+	background-color: lightgray;
+}
+
+.logo img{
+  width: 100px;
+  margin: 30px;
+}
+
+/*--HOME PAGE--*/
+
+/*Artists*/
+
+.homeArtists{
+  height: 60%;
+}
+
+ .pictureArtists{
+  width: 100%;
+}
+/* 
+.nameArtists{
+  text-transform: uppercase;
+}  */
