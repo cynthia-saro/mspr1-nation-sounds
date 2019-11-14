@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 
-<?php include('head.php')?>
+<?php include('layout/head.php')?>
 
 <body>
 
     <div id="content">
-    <?php include("layout/navbar");?>
+    <?php include("layout/header.php");?>
         <div id="festival">
             <ul  v-if="festivalprogram.length > 0">
                 <a href="">
