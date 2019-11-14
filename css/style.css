@@ -28,14 +28,13 @@ body
 /*Artists*/
 
 .homeArtists{
-  height: 200px;
-  text-transform: uppercase;
+  height: 60%;
 }
 
-.pictureArtists{
+ .pictureArtists{
   width: 100%;
 }
-
+/* 
 .nameArtists{
-  float: left;
-}
+  text-transform: uppercase;
+}  */
