@@ -19,6 +19,7 @@
                 <a class="dropdown-item" href="#">Carte</a>
                 <a class="dropdown-item" href="#">Billeterie</a>
                 <a class="dropdown-item" href="#">Maps</a>
+                <a class="dropdown-item" href="#">FAQ</a>
                 </div>
             </li>
             <li class="nav-item">
