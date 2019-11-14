@@ -12,14 +12,13 @@
                 <a class="nav-link" href="#">A propos</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Services
-                </a>
                 <!-- bloc menu déroulant -->
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Service 1</a>
-                <a class="dropdown-item" href="#">Autre service action</a>
-                <a class="dropdown-item" href="#">Dernier service</a>
+                <a class="dropdown-item" href="#">Programme</a>
+                <a class="dropdown-item" href="#">Artistes</a>
+                <a class="dropdown-item" href="#">Carte</a>
+                <a class="dropdown-item" href="#">Billeterie</a>
+                <a class="dropdown-item" href="#">Maps</a>
                 </div>
             </li>
             <li class="nav-item">
