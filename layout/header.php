@@ -36,6 +36,11 @@
                 <li class="nav-item active">
                    <div class="actuToggleTitle">Les actus</div>
                 </li>
+                <div class="socialNetworks">
+                    <a href="https://www.instagram.com/?hl=fr"><img src="http://nation-sounds.planethoster.world/wp-content/uploads/2019/11/instagram-1.png"></a>
+                    <a href="https://twitter.com/login"><img src="http://nation-sounds.planethoster.world/wp-content/uploads/2019/11/twitter-1.png"></a>
+                    <a href="https://www.facebook.com/"><img src="http://nation-sounds.planethoster.world/wp-content/uploads/2019/11/facebook.png"></a>
+                </div>
                 <li class="nav-item" v-for="actu in actuInfo">
                  <div class="actuTitle">{{actu.acf.titre}}</div>
                 </li>
