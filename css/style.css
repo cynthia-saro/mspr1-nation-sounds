@@ -38,3 +38,16 @@ body
 .nameArtists{
   text-transform: uppercase;
 }  */
+
+.bouton {
+  background-color: orange;
+  padding: 8px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: none;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+}
