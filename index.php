@@ -33,22 +33,22 @@
                     <a v-on:click="show" >
                         <img v-bind:src="artist.acf.photo.url" class="pictureArtists"/>
                         <div class="nameArtists">{{artist.acf.nom}}</div> 
-                            <!-- <div v-if="isDisplay">
+                            <div class="description" v-if="isDisplay">
                                 <p>{{artist.acf.description}}</p>
                                 <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Billets</button></a>
                                 <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Partagez</button></a>
                                 <br>
                                 <a class="cacher" v-on:click="hide">Fermer</a>
-                            </div>  -->
+                            </div> 
                     </a>    
                 </li>
-                <div v-if="isDisplay">
+                <!-- <div v-if="isDisplay">
                                 <p>{{festivalprogram.acf.description}}</p>
                                 <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Billets</button></a>
                                 <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Partagez</button></a>
                                 <br>
                                 <a class="cacher" v-on:click="hide">Fermer</a>
-                </div> 
+                </div>  -->
             </ul>
             
         </div>

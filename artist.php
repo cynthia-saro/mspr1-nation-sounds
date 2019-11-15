@@ -1,35 +1,27 @@
 <!DOCTYPE html>
 <html>
 
-<?php include('layout/head.php')?>
+<?php include('layout/head.php') ?>
 
 <body>
 
     <div id="content">
-     <?php include("layout/header.php");?>
+        <?php include("layout/header.php"); ?>
+    
+        <!--Festival programmation-->
         <div id="festival">
+
+            <!--Programmation-->
             <ul v-if="festivalprogram.length > 0">
                 <li v-for="artist in festivalprogram" class="homeArtists">
                     <a v-on:click="show" >
                         <img v-bind:src="artist.acf.photo.url" class="pictureArtists"/>
-                        <h2 class="nameArtists">{{artist.acf.nom}}</h2> 
-                            <div v-if="isDisplay">
-                                <p>{{artist.acf.description}}</p>
-                                <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Billets</button></a>
-                                <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Partagez</button></a>
-                                <br>
-                                <a class="cacher" v-on:click="hide">Fermer</a>
-                            </div> 
+                        <div class="nameArtists">{{artist.acf.nom}}</div> 
+                        <div class="description">{{artist.acf.description}}</div> 
                     </a>    
                 </li>
-                <!-- <div v-if="isDisplay">
-                                <p>{{festivalprogram.acf.description}}</p>
-                                <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Billets</button></a>
-                                <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Partagez</button></a>
-                                <br>
-                                <a class="cacher" v-on:click="hide">Fermer</a>
-                </div>  -->
             </ul>
+            
         </div>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -67,6 +59,12 @@
                             })
                         console.log(this.isDisplay)
                     },
+                    show: function() {
+                        this.isDisplay = true;
+                    },
+                    hide: function() {
+                        this.isDisplay = false;
+                    }
                 }
             })
         </script>
