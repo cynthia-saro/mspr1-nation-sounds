@@ -1,26 +1,70 @@
 <!DOCTYPE html>
 <html>
 
-<?php include('layout/head.php') ?>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nation Sounds</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <!--Boostrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  
+</head>
 
 <body>
 
-    <div id="content">
-        <div id="festival">
-            <?php include("layout/header.php"); ?>
+    <!----HEADER----->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand logo" href="http://localhost/mspr1-nation-sounds/"><img src="http://nation-sounds.planethoster.world/wp-content/uploads/2019/11/logo-e1573759787249.png"></a>
+        
+        <button class="navbar-toggler infoPicture" type="button" data-toggle="collapse" data-target="#actuInfo" aria-controls="actuInfo" aria-expanded="false" aria-label="Toggle navigation">
+            <img src="http://nation-sounds.planethoster.world/wp-content/uploads/2019/11/information.png">
+        </button>
 
-                <ul v-if="festivalprogram.length > 0">
-                    <li v-for="artist in festivalprogram" class="homeArtists">
-                        <a v-bind:href="artist.link">
-                            <img v-bind:src="artist.acf.photo.url" class="pictureArtists" />
-                            <div class="nameArtists">{{artist.acf.nom}}</div>
-                        </a>
-                    </li>
-                </ul>
-
-                <?php include('script/api.php') ?>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="http://localhost/mspr1-nation-sounds/programme.php">Programme</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Artistes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Carte</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Billeterie</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://nation-sounds.planethoster.world/faq">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="file:///C:/wamp64/www/mspr1-nation-sounds/partenaire.html">Partenaires</a>
+                </li>
+            </ul>
         </div>
-    </div>
+
+        <div class="collapse navbar-collapse" id="actuInfo">
+            <ul class="navbar-nav mr-auto" v-if="actuInfo.length > 0">
+                <li class="nav-item active">
+                   <div class="actuToggleTitle">Les actus</div>
+                </li>
+                <div class="socialNetworks">
+                    <a href="https://www.instagram.com/?hl=fr"><img src="http://nation-sounds.planethoster.world/wp-content/uploads/2019/11/instagram-1.png"></a>
+                    <a href="https://twitter.com/login"><img src="http://nation-sounds.planethoster.world/wp-content/uploads/2019/11/twitter-1.png"></a>
+                    <a href="https://www.facebook.com/"><img src="http://nation-sounds.planethoster.world/wp-content/uploads/2019/11/facebook.png"></a>
+                </div>
+                <li class="nav-item" v-for="actu in actuInfo">
+                 <div class="actuTitle">{{actu.acf.titre}}</div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
 </body>
 
 </html>
