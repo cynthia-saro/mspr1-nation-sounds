@@ -97,6 +97,19 @@ body
   text-align: center;
 }
 
+.picturePartenaire {
+  max-width: 350px;
+  max-height: 350px;
+}
+
+#titrepartenaire {
+  background-color: rgb(89,240,169);
+}
+
+.detail {
+  font-weight: bold;
+}
+
 /***DAYS FILTER***/
 
   /*-------------------------

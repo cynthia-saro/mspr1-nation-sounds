@@ -34,9 +34,6 @@
                         <a class="nav-link" href="http://localhost/mspr1-nation-sounds/programme.html">Programme</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Artistes</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#">Carte</a>
                     </li>
                     <li class="nav-item">
@@ -46,7 +43,7 @@
                         <a class="nav-link" href="http://nation-sounds.planethoster.world/faq">FAQ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="file:///C:/wamp64/www/mspr1-nation-sounds/partenaire.html">Partenaires</a>
+                        <a class="nav-link" href="./partenaire.html">Partenaires</a>
                     </li>
                 </ul>
             </div>
@@ -96,6 +93,8 @@
                         <div class="nameArtists">{{artist.acf.nom}}</div>
                         <div v-if="isDisplay" class="description"> 
                             <p>{{artist.acf.description}}</p>
+                            <p class="detail">Scène: {{artist.acf.scene}}</p>
+                            <p class="detail">Date: {{artist.acf.jour}}</p>
                             <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Billets</button></a>
                             <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Partagez</button></a>
                             <br>
