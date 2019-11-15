@@ -13,6 +13,7 @@
                 el: '#festival',
                 data: {
                     festivalprogram: [],
+                    isDisplay: false,
                 },
 
                 created: function () {
@@ -32,6 +33,13 @@
                                 console.log(error);
                             })
                         //console.log(this.festivalprogram)
+                    }
+
+                    show: function() {
+                        this.isDisplay = true;
+                    },
+                    hide: function() {
+                        this.isDisplay = false;
                     }
                 }
             })
