@@ -97,11 +97,82 @@ body
   text-align: center;
 }
 
-.picturePartenaire {
-  max-width: 350px;
-  max-height: 350px;
-}
+/***DAYS FILTER***/
 
-#titrepartenaire {
-  background-color: rgb(89,240,169);
-}
+  /*-------------------------
+    	The search input
+    --------------------------*/
+
+    .bar{
+      padding: 5px;
+    	box-shadow: 0 1px 1px #ccc;
+    	border-radius: 2px;
+    	width: 100%;
+    	position:relative;
+    }
+
+    .bar a{
+    	background:#4987a1 center center no-repeat;
+      width:20%;
+      padding: 4px;
+    	display:inline-block;
+    	text-decoration:none !important;
+    }
+
+    .bar a.active{
+    	background-color:green;
+    }
+
+    /*-------------------------
+    	List layout
+    --------------------------*/
+
+    ul.list{
+    	list-style: none;
+    	width: 100%;
+    	margin: 0 auto;
+    	text-align: left;
+    }
+
+    ul.list li{
+    	border-bottom: 1px solid #ddd;
+    	padding: 10px;
+    	overflow: hidden;
+    }
+
+    /* ul.list li img{
+    	width:120px;
+    	height:120px;
+    	float:left;
+    	border:none;
+    } */
+
+    /* ul.list li p{
+    	margin-left: 135px;
+    	font-weight: bold;
+    	color:#6e7a7f;
+    } */
+
+    /*-------------------------
+    	Grid layout
+    --------------------------*/
+
+    ul.grid{
+    	list-style: none;
+    	width: 570px;
+    	margin: 0 auto;
+    	text-align: left;
+    }
+
+    ul.grid li{
+    	padding: 2px;
+    	float:left;
+    }
+
+    ul.grid li img{
+    	width:280px;
+    	height:280px;
+    	object-fit: cover;
+    	display:block;
+    	border:none;
+    }

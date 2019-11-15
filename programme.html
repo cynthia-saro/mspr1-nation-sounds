@@ -40,7 +40,7 @@
                         <a class="nav-link" href="#">Carte</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.digitick.com/festival-tickets">Billeterie</a>
+                        <a class="nav-link" href="#">Billeterie</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="http://nation-sounds.planethoster.world/faq">FAQ</a>
@@ -68,43 +68,38 @@
             </div>
         </nav>
         <!----HEADER NAV BAR----->
-
-        <!--Carrousel Security infomation-->
-        <div id="security">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner" v-if="securityInfo.length > 0">
-                    <div class="carousel-item active">
-                        <p>>> LES INFOS IMPORTANTES >></p>
-                    </div>
-                    <div class="carousel-item" v-for="post in securityInfo" class="homeSecurity">
-                        <div class="titleSecurity">{{post.acf.titre}}</div>
-                        <a v-bind:href="post.link">En savoir plus ...</a>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     
         <!--Festival programmation-->
         <div id="festival">
 
-            <!--Programmation-->
-            <ul v-if="festivalprogram.length > 0">
-                <li v-for="artist in festivalprogram" class="homeArtists">
-                    <a v-on:click="show">
-                        <img v-bind:src="artist.acf.photo.url" class="pictureArtists" />
-                        <div class="nameArtists">{{artist.acf.nom}}</div>
-                        <div v-if="isDisplay" class="description"> 
-                            <p>{{artist.acf.description}}</p>
-                            <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Billets</button></a>
-                            <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Partagez</button></a>
-                            <br>
-                            <a class="cacher" v-on:click="hide">Fermer</a>
-                        </div>
-                    </a>
-                </li>
+            <!---DAYS FILTER---->
+            <div class="bar">
+                <a class="dayselect" v-bind:class="{ 'active': layout == 'alldays'}" v-on:click="layout = 'alldays'">Tous</a>
+                <a class="dayselect" v-bind:class="{ 'active': layout == 'friday'}" v-on:click="layout = 'friday'">Vendredi</a>
+                <a class="dayselect" v-bind:class="{ 'active': layout == 'saturday'}" v-on:click="layout = 'saturday'">Samedi</a>
+                <a class="dayselect" v-bind:class="{ 'active': layout == 'sunday'}" v-on:click="layout = 'sunday'">Dimanche</a>
+            </div>
+        
+            <ul v-if="layout == 'alldays'" class="alldays">
+                <!-- A view with big photos and no text -->
+                Tous
             </ul>
-            
+
+            <ul v-if="layout == 'friday'" class="friday">
+                <!-- A view with big photos and no text -->
+                VENDREDi
+            </ul>  
+
+            <ul v-if="layout == 'saturday'" class="saturday">
+                <!-- A view with big photos and no text -->
+                Samedi
+            </ul>
+        
+            <ul v-if="layout == 'sunday'" class="sunday">
+                <!-- A compact view smaller photos and titles -->
+                Dimanche
+            </ul>
+
         </div>
         
         <!----SCRIPTS----->
@@ -126,6 +121,7 @@
                 data: {
                     festivalprogram: [],
                     isDisplay: false,
+                    layout: 'alldays',
                 },
 
                 created: function() {
@@ -150,35 +146,6 @@
                     },
                     hide: function(){
                         this.isDisplay = false;
-                    }
-                }
-            })
-
-            /*security infomations*/
-            var apiURLsecurityInforamation = 'https://nation-sounds.planethoster.world/wp-json/wp/v2/posts?categories=3'
-
-            var securityInfo = new Vue({
-                el: '#security',
-                data: {
-                    securityInfo: [],
-                },
-
-                created: function() {
-                    this.fetchData()
-                },
-
-                // fonction permettant de nous lier à l'API (récupérer les données via l'API)
-                methods: {
-                    fetchData: function() {
-                        var self = this
-                        axios.get(apiURLsecurityInforamation)
-                            .then(function(response) {
-                                console.log(response.data)
-                                self.securityInfo = response.data
-                            })
-                            .catch(function(error) {
-                                console.log(error);
-                            })
                     }
                 }
             })
