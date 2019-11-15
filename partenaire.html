@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 
+<!----HEAD---->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,25 +10,21 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <!--Boostrap-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  
 </head>
+<!----HEAD---->
 
 <body>
 
     <div id="content">
-
-        <!----HEADER----->
+        <!----HEADER NAV BAR----->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand logo" href="http://localhost/mspr1-nation-sounds/"><img
-                    src="http://nation-sounds.planethoster.world/wp-content/uploads/2019/11/logo-e1573759787249.png"></a>
-
-            <button class="navbar-toggler infoPicture" type="button" data-toggle="collapse" data-target="#actuInfo"
-                aria-controls="actuInfo" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand logo" href="http://localhost/mspr1-nation-sounds/"><img src="http://nation-sounds.planethoster.world/wp-content/uploads/2019/11/logo-e1573759787249.png"></a>
+            
+            <button class="navbar-toggler infoPicture" type="button" data-toggle="collapse" data-target="#actuInfo" aria-controls="actuInfo" aria-expanded="false" aria-label="Toggle navigation">
                 <img src="http://nation-sounds.planethoster.world/wp-content/uploads/2019/11/information.png">
             </button>
 
@@ -43,14 +40,13 @@
                         <a class="nav-link" href="#">Carte</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Billeterie</a>
+                        <a class="nav-link" href="https://www.digitick.com/festival-tickets">Billeterie</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="http://nation-sounds.planethoster.world/faq">FAQ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"
-                            href="file:///C:/wamp64/www/mspr1-nation-sounds/partenaire.html">Partenaires</a>
+                        <a class="nav-link" href="file:///C:/wamp64/www/mspr1-nation-sounds/partenaire.html">Partenaires</a>
                     </li>
                 </ul>
             </div>
@@ -58,96 +54,35 @@
             <div class="collapse navbar-collapse" id="actuInfo">
                 <ul class="navbar-nav mr-auto" v-if="actuInfo.length > 0">
                     <li class="nav-item active">
-                        <div class="actuToggleTitle">Les actus</div>
+                    <div class="actuToggleTitle">Les actus</div>
                     </li>
                     <div class="socialNetworks">
-                        <a href="https://www.instagram.com/?hl=fr"><img
-                                src="http://nation-sounds.planethoster.world/wp-content/uploads/2019/11/instagram-1.png"></a>
-                        <a href="https://twitter.com/login"><img
-                                src="http://nation-sounds.planethoster.world/wp-content/uploads/2019/11/twitter-1.png"></a>
-                        <a href="https://www.facebook.com/"><img
-                                src="http://nation-sounds.planethoster.world/wp-content/uploads/2019/11/facebook.png"></a>
+                        <a href="https://www.instagram.com/?hl=fr"><img src="http://nation-sounds.planethoster.world/wp-content/uploads/2019/11/instagram-1.png"></a>
+                        <a href="https://twitter.com/login"><img src="http://nation-sounds.planethoster.world/wp-content/uploads/2019/11/twitter-1.png"></a>
+                        <a href="https://www.facebook.com/"><img src="http://nation-sounds.planethoster.world/wp-content/uploads/2019/11/facebook.png"></a>
                     </div>
                     <li class="nav-item" v-for="actu in actuInfo">
-                        <div class="actuTitle">{{actu.acf.titre}}</div>
+                    <div class="actuTitle">{{actu.acf.titre}}</div>
                     </li>
                 </ul>
             </div>
         </nav>
+    
+        <!--Festival programmation-->
+        <h1 id="titrepartenaire">Nos Partenaires</h1>
+        <div id="blockpartenaire">
 
-
-
-        <div id="festival">
-            <ul v-if="festivalprogram.length > 0">
-                <li v-for="artist in festivalprogram" class="homeArtists">
-                    <a v-on:click="show">
-                        <img v-bind:src="artist.acf.photo.url" class="pictureArtists" />
-                        <h2 class="nameArtists">{{artist.acf.nom}}</h2>
-                        <!-- <div v-if="isDisplay">
-                                <p>{{artist.acf.description}}</p>
-                                <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Billets</button></a>
-                                <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Partagez</button></a>
-                                <br>
-                                <a class="cacher" v-on:click="hide">Fermer</a>
-                            </div>  -->
-                    </a>
-                </li>
-                <div v-if="isDisplay">
-                    <p>{{festivalprogram.acf.description}}</p>
-                    <a href="https://www.digitick.com/festival-tickets"><button type="button"
-                            class="btn btn-warning">Billets</button></a>
-                    <a href="https://www.digitick.com/festival-tickets"><button type="button"
-                            class="btn btn-warning">Partagez</button></a>
-                    <br>
-                    <a class="cacher" v-on:click="hide">Fermer</a>
-                </div>
-            </ul>
+            <a href="https://www.bmw.fr/fr/topics/univers/bmw-i-2016/at-a-glance.html"><img class="picturePartenaire" src="photos/73409338_2567750253456372_4116761745609981952_n.png"></a>
+            <a href="https://www.marriott.fr/loyalty.mi"><img class="picturePartenaire" src="photos/74380220_426519488262677_6652401602697101312_n.png"></a>
+            <a href="https://www.americanexpress.com/fr/"><img class="picturePartenaire" src="photos/74609506_968166320228122_8867715609073287168_n.png"></a>
+            <a href="https://www.absolut.com/fr/news/"><img class="picturePartenaire" src="photos/75126694_2713408042057125_7343068945605197824_n.png"></a>
+            <a href="https://www.amazon.fr/"><img class="picturePartenaire" src="photos/75388250_1404556099721513_3253108143814606848_n.png"></a>
+            <a href="https://www.bose.fr/fr_fr/index.html"><img class="picturePartenaire" src="photos/76181272_530168377764134_2416299556498046976_n.png"></a>
+            <a href="https://www.cupcakevineyards.com/"><img class="picturePartenaire" src="photos/76769622_418752735456342_320368877693304832_n.png"></a>
+            <a href="https://www.heinekenfrance.fr/gate-age/"><img class="picturePartenaire" src="photos/77116359_2699718820084973_9157171395229122560_n.png"></a>
+            
         </div>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-        <!--Boostar-->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
-        <script>
-
-            var apiURL = 'https://nation-sounds.planethoster.world/wp-json/wp/v2/posts?categories=2'
-
-            var festival = new Vue({
-                el: '#festival',
-                data: {
-                    festivalprogram: [],
-                    isDisplay: false,
-                },
-
-                created: function () {
-                    this.fetchData()
-                },
-
-                // fonction permettant de nous lier à l'API (récupérer les données via l'API)
-                methods: {
-                    fetchData: function () {
-                        var self = this
-                        axios.get(apiURL)
-                            .then(function (response) {
-                                console.log(response.data)
-                                self.festivalprogram = response.data
-                            })
-                            .catch(function (error) {
-                                console.log(error);
-                            })
-                        console.log(this.isDisplay)
-                    },
-                }
-            })
-        </script>
+        <!----SCRIPTS----->
     </div>
 </body>
 
