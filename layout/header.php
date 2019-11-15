@@ -11,7 +11,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="file:///C:/wamp64/www/mspr1-nation-sounds/programme.html">Programme</a>
+                    <a class="nav-link" href="http://localhost/mspr1-nation-sounds/programme.php">Programme</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Artistes</a>
