@@ -34,7 +34,7 @@
                         <a class="nav-link" href="http://localhost/mspr1-nation-sounds/programme.html">Programme</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Carte</a>
+                        <a class="nav-link" href="geoloc.html">Carte</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://www.digitick.com/festival-tickets">Billeterie</a>
@@ -81,7 +81,7 @@
                 </div>
             </div>
         </div>
-        <center><a class="btn btn-primary" href="geoloc.html" role="button">Géoloc.html</a></center>
+       
         <!--Festival programmation-->
         <div id="festival">
 
@@ -209,10 +209,13 @@
                                 console.log(error);
                             })
                     }
-                }
-
-                
+                }  
             })
+        </script>
+        <script>
+        $("#faq").on("click", ".questions", function() {
+        $(this).next(".reponses").slideToggle();
+        });
         </script>
         <!----SCRIPTS----->
     </div>
