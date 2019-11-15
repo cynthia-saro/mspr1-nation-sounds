@@ -1,18 +1,38 @@
 <!DOCTYPE html>
 <html>
 
-<?php include('layout/head.php')?>
+<?php include('layout/head.php') ?>
 
 <body>
 
     <div id="content">
-     <?php include("layout/header.php");?>
+        <?php include("layout/header.php"); ?>
+
+        <!--Carrousel Security infomation-->
+        <div id="security">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" v-if="securityInfo.length > 0">
+                    <div class="carousel-item active">
+                        <p>>> LES INFOS IMPORTANTES >></p>
+                    </div>
+                    <div class="carousel-item" v-for="post in securityInfo" class="homeSecurity">
+                        <div class="titleSecurity">{{post.acf.titre}}</div>
+                        <a v-bind:href="post.link">En savoir plus ...</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!--Festival programmation-->
         <div id="festival">
+
+            <!--Programmation-->
             <ul v-if="festivalprogram.length > 0">
                 <li v-for="artist in festivalprogram" class="homeArtists">
                     <a v-on:click="show" >
                         <img v-bind:src="artist.acf.photo.url" class="pictureArtists"/>
-                        <h2 class="nameArtists">{{artist.acf.nom}}</h2> 
+                        <div class="nameArtists">{{artist.acf.nom}}</div> 
                             <!-- <div v-if="isDisplay">
                                 <p>{{artist.acf.description}}</p>
                                 <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Billets</button></a>
@@ -30,6 +50,7 @@
                                 <a class="cacher" v-on:click="hide">Fermer</a>
                 </div> 
             </ul>
+            
         </div>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -75,6 +96,66 @@
                     }
                 }
             })
+            /*security infomations*/
+    var apiURLsecurityInforamation = 'https://nation-sounds.planethoster.world/wp-json/wp/v2/posts?categories=3'
+
+var securityInfo = new Vue({
+    el: '#security',
+    data: {
+        securityInfo: [],
+    },
+
+    created: function() {
+        this.fetchData()
+    },
+
+    // fonction permettant de nous lier à l'API (récupérer les données via l'API)
+    methods: {
+        fetchData: function() {
+            var self = this
+            axios.get(apiURLsecurityInforamation)
+                .then(function(response) {
+                    console.log(response.data)
+                    self.securityInfo = response.data
+                })
+                .catch(function(error) {
+                    console.log(error);
+                })
+        }
+    }
+})
+
+
+/*actu infomations*/
+var apiURLactuInformation = 'https://nation-sounds.planethoster.world/wp-json/wp/v2/posts?categories=4'
+
+var actuInfo = new Vue({
+    el: '#actuInfo',
+    data: {
+        actuInfo: [],
+    },
+
+    created: function() {
+        this.fetchData()
+    },
+
+    // fonction permettant de nous lier à l'API (récupérer les données via l'API)
+    methods: {
+        fetchData: function() {
+            var self = this
+            axios.get(apiURLactuInformation)
+                .then(function(response) {
+                    console.log(response.data)
+                    self.actuInfo = response.data
+                })
+                .catch(function(error) {
+                    console.log(error);
+                })
+        }
+    }
+
+    
+})
         </script>
     </div>
 </body>
