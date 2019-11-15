@@ -94,8 +94,24 @@
             </ul>
 
             <ul v-if="layout == 'friday'" class="friday">
-                <li v-for="artist in festivalprogram" class="homeArtists">
-                    <a v-on:click="show" >
+                <li v-for="artist in festivalprogram" class="homeArtists" v-if="artist.acf.jour == 'vendredi'">
+                    <a v-on:click="show">
+                        <img v-bind:src="artist.acf.photo.url" class="pictureArtists" />
+                        <div class="nameArtists">{{artist.acf.nom}}</div>
+                        <div v-if="isDisplay" class="description"> 
+                            <p>{{artist.acf.description}}</p>
+                            <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Billets</button></a>
+                            <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Partagez</button></a>
+                            <br>
+                            <a class="cacher" v-on:click="hide">Fermer</a>
+                        </div>
+                    </a> 
+                </li>
+            </ul>  
+
+            <ul v-if="layout == 'saturday'" class="saturday">
+                <li v-for="artist in festivalprogram" class="homeArtists" v-if="artist.acf.jour=='samedi'">
+                    <a v-on:click="show">
                         <img v-bind:src="artist.acf.photo.url" class="pictureArtists" />
                         <div class="nameArtists">{{artist.acf.nom}}</div>
                         <div v-if="isDisplay" class="description"> 
@@ -107,14 +123,22 @@
                         </div>
                     </a>
                 </li>
-            </ul>  
-
-            <ul v-if="layout == 'saturday'" class="saturday">
-                Samedi
             </ul>
         
             <ul v-if="layout == 'sunday'" class="sunday">
-                Dimanche
+                <li v-for="artist in festivalprogram" class="homeArtists" v-if="artist.acf.jour=='dimanche'">
+                    <a v-on:click="show">
+                        <img v-bind:src="artist.acf.photo.url" class="pictureArtists" />
+                        <div class="nameArtists">{{artist.acf.nom}}</div>
+                        <div v-if="isDisplay" class="description"> 
+                            <p>{{artist.acf.description}}</p>
+                            <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Billets</button></a>
+                            <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Partagez</button></a>
+                            <br>
+                            <a class="cacher" v-on:click="hide">Fermer</a>
+                        </div>
+                    </a>
+                </li>
             </ul>
 
         </div>
@@ -131,7 +155,7 @@
             /*---ON THE HOME PAGE ---*/
 
             /*artists*/
-            var apiURL = 'https://nation-sounds.planethoster.world/wp-json/wp/v2/posts?categories=2'
+            var apiURL = 'https://nation-sounds.planethoster.world/wp-json/wp/v2/posts?per_page=100&categories=2'
 
             var festival = new Vue({
                 el: '#festival',
