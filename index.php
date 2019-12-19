@@ -40,7 +40,7 @@
                         <a class="nav-link" href="https://www.digitick.com/festival-tickets">Billeterie</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="http://nation-sounds.planethoster.world/faq">FAQ</a>
+                        <a class="nav-link" href="./faq.html">FAQ</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./partenaire.html">Partenaires</a>

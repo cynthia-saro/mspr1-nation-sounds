@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<!----HEAD---->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nation Sounds</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <!--Boostrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  
+</head>
+<!----HEAD---->
+
+<body>
+
+    <div id="content" v-cloak>
+        <!----HEADER NAV BAR----->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand logo" href="http://localhost/mspr1-nation-sounds/"><img src="http://nation-sounds.planethoster.world/wp-content/uploads/2019/11/logo-e1573759787249.png"></a>
+            
+            <button class="navbar-toggler infoPicture" type="button" data-toggle="collapse" data-target="#actuInfo" aria-controls="actuInfo" aria-expanded="false" aria-label="Toggle navigation">
+                <img src="http://nation-sounds.planethoster.world/wp-content/uploads/2019/11/information.png">
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="http://localhost/mspr1-nation-sounds/programme.html">Programme</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="geoloc.html">Carte</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.digitick.com/festival-tickets">Billeterie</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://nation-sounds.planethoster.world/faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="file:///C:/wamp64/www/mspr1-nation-sounds/partenaire.html">Partenaires</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="collapse navbar-collapse" id="actuInfo">
+                <ul class="navbar-nav mr-auto" v-if="actuInfo.length > 0">
+                    <li class="nav-item active">
+                    <div class="actuToggleTitle">Les actus</div>
+                    </li>
+                    <div class="socialNetworks">
+                        <a href="https://www.instagram.com/?hl=fr"><img src="http://nation-sounds.planethoster.world/wp-content/uploads/2019/11/instagram-1.png"></a>
+                        <a href="https://twitter.com/login"><img src="http://nation-sounds.planethoster.world/wp-content/uploads/2019/11/twitter-1.png"></a>
+                        <a href="https://www.facebook.com/"><img src="http://nation-sounds.planethoster.world/wp-content/uploads/2019/11/facebook.png"></a>
+                    </div>
+                    <li class="nav-item" v-for="actu in actuInfo">
+                    <div class="actuTitle">{{actu.acf.titre}}</div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!----HEADER NAV BAR----->
+    
+        <!--Festival programmation-->
+        <div id="festival">
+
+            <div class="panel-group" id="faqAccordion">
+                <div class="panel panel-default ">
+                    <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question0">
+                         <h4 class="panel-title">
+                            <a href="#" class="ing">Q : Dans quelles conditions se déroule les spectacles ?</a>
+                      </h4>
+            
+                    </div>
+                    <div id="question0" class="panel-collapse collapse" style="height: 0px;">
+                        <div class="panel-body">
+                             <p>Les spectateurs sont tous debout (placement libre).
+                                A titre tout à fait exceptionnel, un spectacle peut se dérouler assis. Il en sera alors fait mention sur le site internet et sur les billets.
+                                La 2e scène installée pour les 26 et 27 juin pourra accueillir 10 000 personnes. La prairie a une surface plane, en herbe. Les spectateurs seront tous debout. Une plateforme sera créée pour les PMR.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default ">
+                    <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question1">
+                         <h4 class="panel-title">
+                            <a href="#" class="ing">Q : Et en cas de mauvais temps ?</a>
+                      </h4>
+            
+                    </div>
+                    <div id="question1" class="panel-collapse collapse" style="height: 0px;">
+                        <div class="panel-body">
+                            <p>
+                                Les spectacles sont maintenus en cas de mauvais temps et ne sont pas annulés ni déplacés en salle. Seule une alerte orange émise par la préfecture de Vendée pourrait causer l’annulation d’un spectacle.
+                                Attention ! En cas de pluie, prévoyez des ponchos, capes et autres vêtements de pluie. Les parapluies, interdits sur le site, seront systématiquement mis en consigne (sinon vos voisins de derrière ne verront rien et vous serez vous-même gênés par vos voisins de devant). Aucun repli en salle n’est envisageable.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default ">
+                    <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question2">
+                         <h4 class="panel-title">
+                            <a href="#" class="ing">Q : Puis-je rentrer quand je veux sur le site ?</a>
+                      </h4>
+            
+                    </div>
+                    <div id="question2" class="panel-collapse collapse" style="height: 0px;">
+                        <div class="panel-body">
+                            <p>Oui, vous pouvez entrer sur le site lorsque vous le souhaitez, de l’ouverture des portes à la fin de la soirée (en général aux alentours de minuit). A noter que lorsque le spectacle affiche complet, les portes ouvrent 1h30 avant l’horaire indiqué sur les billets. Lorsque le spectacle n’est pas complet, les portes ouvrent 1h avant l’horaire indiqué sur les billets.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default ">
+                    <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question3">
+                         <h4 class="panel-title">
+                            <a href="#" class="ing">Q : Quels moyens de paiement spécifiques sont acceptés ?</a>
+                      </h4>
+            
+                    </div>
+                    <div id="question3" class="panel-collapse collapse" style="height: 0px;">
+                        <div class="panel-body">
+            
+                            <p>Les chèques vacances (ANCV) et les chèques culture sont également acceptés comme mode de règlement à l’Office de Tourisme de Mortagne (02.51.65.11.32) et sur place le soir du spectacle. </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default ">
+                    <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question3">
+                         <h4 class="panel-title">
+                            <a href="#" class="ing">Q : Puis-je sortir du site puis rentrer à nouveau ?</a>
+                      </h4>
+            
+                    </div>
+                    <div id="question3" class="panel-collapse collapse" style="height: 0px;">
+                        <div class="panel-body">
+            
+                            <p>Non, toute sortie est définitive. </p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+        
+        <!----SCRIPTS----->
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+        <!--Bootstrap-->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        
+        <!----SCRIPTS----->
+    </div>
+</body>
+
+</html>
