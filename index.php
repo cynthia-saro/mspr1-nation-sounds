@@ -118,7 +118,8 @@
             /*---ON THE HOME PAGE ---*/
 
             /*artists*/
-            var apiURL = 'https://nation-sounds.planethoster.world/wp-json/wp/v2/posts?per_page=100&categories=2'
+            // var apiURL = 'http://localhost:8000/posts/2'
+            var apiURL = 'https://nation-sounds.planethoster.world/wp-json/wp/v2/posts?categories=2'
 
             var festival = new Vue({
                 el: '#festival',
