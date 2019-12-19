@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 
-<?php include ("/layout/head.php") ?>
+<?php include ("./layout/head.php") ?>
 
 <body>
 
     <div id="content" v-cloak>
         <!----HEADER NAV BAR----->
-        <?php include ("/layout/navbar.php")?>
+        <?php include ("./layout/navbar.php")?>
    
         <!--Festival programmation-->
         <div id="festival">
