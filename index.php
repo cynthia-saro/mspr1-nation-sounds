@@ -27,7 +27,7 @@
        
         <!--Festival programmation-->
         <div id="festival">
-
+           
             <!--Programmation-->
             <ul v-if="festivalprogram.length > 0">
                 <li v-for="artist in festivalprogram" class="homeArtists">

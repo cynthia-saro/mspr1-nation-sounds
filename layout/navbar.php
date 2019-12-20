@@ -25,6 +25,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="partenaire.php">Partenaires</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rencontres.php">Rencontres</a>
+                    </li>
                 </ul>
             </div>
 

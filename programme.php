@@ -11,7 +11,7 @@
    
         <!--Festival programmation-->
         <div id="festival">
-
+            <h1>Programme</h1>
             <!---DAYS FILTER---->
             <div class="bar">
                 <a class="dayselect" v-bind:class="{ 'active': layout == 'alldays'}" v-on:click="layout = 'alldays'">Tous</a>
@@ -22,9 +22,19 @@
         
             <ul v-if="layout == 'alldays' && festivalprogram.length > 0" class="alldays">
                 <li v-for="artist in festivalprogram" class="homeArtists">
-                    <a href="./artist.php">
+                    <a v-on:click="show">
                         <img v-bind:src="artist.acf.photo.url" class="pictureArtists" />
                         <div class="nameArtists">{{artist.acf.nom}}</div>
+                        <div v-if="isDisplay" class="description"> 
+                            <p>{{artist.acf.description}}</p>
+                            <p class="detail">Scène: {{artist.acf.scene}}</p>
+                            <p class="detail">Date: {{artist.acf.jour}}</p>
+                            <p class="detail">Heure de passage: </p>
+                            <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Billets</button></a>
+                            <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Partagez</button></a>
+                            <br>
+                            <a class="cacher" v-on:click="hide">Fermer</a>
+                        </div>
                     </a>
                 </li>
             </ul>
@@ -37,6 +47,7 @@
                         <div v-if="isDisplay" class="description"> 
                             <p>{{artist.acf.description}}</p>
                             <p>{{artist.acf.date}}</p>
+                            <p class="detail">Heure de passage: </p>
                             <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Billets</button></a>
                             <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Partagez</button></a>
                             <br>
@@ -54,6 +65,7 @@
                         <div v-if="isDisplay" class="description"> 
                             <p>{{artist.acf.description}}</p>
                             <p>{{artist.acf.date}}</p>
+                            <p class="detail">Heure de passage: </p>
                             <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Billets</button></a>
                             <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Partagez</button></a>
                             <br>
@@ -71,6 +83,7 @@
                         <div v-if="isDisplay" class="description"> 
                             <p>{{artist.acf.description}}</p>
                             <p>{{artist.acf.date}}</p>
+                            <p class="detail">Heure de passage: </p>
                             <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Billets</button></a>
                             <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Partagez</button></a>
                             <br>
