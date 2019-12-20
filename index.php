@@ -18,7 +18,7 @@
                     </div>
                     <div class="carousel-item" v-for="post in securityInfo" class="homeSecurity">
                         <div class="titleSecurity">{{post.title}}</div>
-                        <a v-bind:href="post.link">En savoir plus ...</a>
+                        <a href="securityinfos.php">En savoir plus ...</a>
                     </div>
                     </div>
                 </div>

@@ -78,6 +78,15 @@ body
     color: white;
     font-weight: bold;
 }
+
+.securityInfos{
+  margin-bottom: 40px;
+}
+
+.descriptionSecurity{
+  font-weight: normal;
+}
+
 /*----*/
 .bouton {
   background-color: orange;
