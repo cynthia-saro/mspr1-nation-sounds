@@ -35,6 +35,7 @@
                         <img v-bind:src="artist.picture" class="pictureArtists" />
                         <div class="nameArtists">{{artist.name}}</div>
                         <div v-if="isDisplay" class="description"> 
+                            <div class="categoryArtist">Genre : {{artist.category}}</div>
                             <p>{{artist.description}}</p>
                             <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Billets</button></a>
                             <br>
