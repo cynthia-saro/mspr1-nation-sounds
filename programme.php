@@ -29,9 +29,7 @@
                             <p>{{artist.acf.description}}</p>
                             <p class="detail">Scène: {{artist.acf.scene}}</p>
                             <p class="detail">Date: {{artist.acf.jour}}</p>
-                            <p class="detail">Heure de passage: </p>
                             <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Billets</button></a>
-                            <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Partagez</button></a>
                             <br>
                             <a class="cacher" v-on:click="hide">Fermer</a>
                         </div>
@@ -47,9 +45,7 @@
                         <div v-if="isDisplay" class="description"> 
                             <p>{{artist.acf.description}}</p>
                             <p>{{artist.acf.date}}</p>
-                            <p class="detail">Heure de passage: </p>
                             <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Billets</button></a>
-                            <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Partagez</button></a>
                             <br>
                             <a class="cacher" v-on:click="hide">Fermer</a>
                         </div>
@@ -65,9 +61,7 @@
                         <div v-if="isDisplay" class="description"> 
                             <p>{{artist.acf.description}}</p>
                             <p>{{artist.acf.date}}</p>
-                            <p class="detail">Heure de passage: </p>
                             <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Billets</button></a>
-                            <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Partagez</button></a>
                             <br>
                             <a class="cacher" v-on:click="hide">Fermer</a>
                         </div>
@@ -83,9 +77,7 @@
                         <div v-if="isDisplay" class="description"> 
                             <p>{{artist.acf.description}}</p>
                             <p>{{artist.acf.date}}</p>
-                            <p class="detail">Heure de passage: </p>
                             <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Billets</button></a>
-                            <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Partagez</button></a>
                             <br>
                             <a class="cacher" v-on:click="hide">Fermer</a>
                         </div>
