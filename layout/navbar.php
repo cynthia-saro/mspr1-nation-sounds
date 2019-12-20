@@ -39,7 +39,7 @@
                         <a href="https://www.facebook.com/"><img src="http://nation-sounds.planethoster.world/wp-content/uploads/2019/11/facebook.png"></a>
                     </div>
                     <li class="nav-item" v-for="actu in actuInfo">
-                    <div class="actuTitle">{{actu.acf.titre}}</div>
+                        <div class="actuTitle">{{actu.title}}</div>
                     </li>
                 </ul>
             </div>

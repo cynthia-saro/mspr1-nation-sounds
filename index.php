@@ -17,7 +17,7 @@
                         <p>>> LES INFOS IMPORTANTES >></p>
                     </div>
                     <div class="carousel-item" v-for="post in securityInfo" class="homeSecurity">
-                        <div class="titleSecurity">{{post.acf.titre}}</div>
+                        <div class="titleSecurity">{{post.title}}</div>
                         <a v-bind:href="post.link">En savoir plus ...</a>
                     </div>
                     </div>
@@ -32,12 +32,12 @@
             <ul v-if="festivalprogram.length > 0">
                 <li v-for="artist in festivalprogram" class="homeArtists">
                     <a v-on:click="show">
-                        <img v-bind:src="artist.acf.photo.url" class="pictureArtists" />
-                        <div class="nameArtists">{{artist.acf.nom}}</div>
+                        <img v-bind:src="artist.picture" class="pictureArtists" />
+                        <div class="nameArtists">{{artist.name}}</div>
                         <div v-if="isDisplay" class="description"> 
-                            <p>{{artist.acf.description}}</p>
-                            <p class="detail">Scène: {{artist.acf.scene}}</p>
-                            <p class="detail">Date: {{artist.acf.jour}}</p>
+                            <p>{{artist.description}}</p>
+                            <!-- <p class="detail">Scène: {{artists.acf.scene}}</p>
+                            <p class="detail">Date: {{artist.acf.jour}}</p> -->
                             <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Billets</button></a>
                             <a href="https://www.digitick.com/festival-tickets"><button type="button" class="btn btn-warning">Partagez</button></a>
                             <br>
@@ -61,8 +61,7 @@
             /*---ON THE HOME PAGE ---*/
 
             /*artists*/
-            // var apiURL = 'http://localhost:8000/posts/2'
-            var apiURL = 'https://nation-sounds.planethoster.world/wp-json/wp/v2/posts?categories=2'
+            var apiURL = 'http://localhost:8000/json/artists'
 
             var festival = new Vue({
                 el: '#festival',
@@ -82,7 +81,7 @@
                         axios.get(apiURL)
                             .then(function(response) {
                                 console.log(response.data)
-                                self.festivalprogram = response.data
+                                self.festivalprogram = response.data.artists
                             })
                             .catch(function(error) {
                                 console.log(error);
@@ -98,7 +97,7 @@
             })
 
             /*security infomations*/
-            var apiURLsecurityInforamation = 'https://nation-sounds.planethoster.world/wp-json/wp/v2/posts?categories=3'
+            var apiURLsecurityInforamation = 'http://localhost:8000/json/securityinfos'
 
             var securityInfo = new Vue({
                 el: '#security',
@@ -117,7 +116,7 @@
                         axios.get(apiURLsecurityInforamation)
                             .then(function(response) {
                                 console.log(response.data)
-                                self.securityInfo = response.data
+                                self.securityInfo = response.data.securityinfos
                             })
                             .catch(function(error) {
                                 console.log(error);
@@ -128,7 +127,7 @@
 
 
             /*actu infomations*/
-            var apiURLactuInformation = 'https://nation-sounds.planethoster.world/wp-json/wp/v2/posts?categories=4'
+            var apiURLactuInformation = 'http://localhost:8000/json/actualities'
 
             var actuInfo = new Vue({
                 el: '#actuInfo',
@@ -147,7 +146,7 @@
                         axios.get(apiURLactuInformation)
                             .then(function(response) {
                                 console.log(response.data)
-                                self.actuInfo = response.data
+                                self.actuInfo = response.data.actualities
                             })
                             .catch(function(error) {
                                 console.log(error);
